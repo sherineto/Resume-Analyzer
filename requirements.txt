@@ -1,3 +1,5 @@
 streamlit
-pdfminer==20110515
+setuptools pypiwin32 six
+--no-cache-dir pdfminer
+pdfminer
 phonenumbers
