@@ -1,5 +1,2 @@
-streamlit
-pandas
-base64
 phonenumbers
 pdfminer
