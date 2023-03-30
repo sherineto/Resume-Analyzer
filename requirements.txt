@@ -1,2 +1,2 @@
-phonenumbers
-pdfminer
+pip install phonenumbers
+pip install pdfminer
