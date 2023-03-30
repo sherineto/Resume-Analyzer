@@ -1,2 +1,3 @@
-pip install phonenumbers
+streamlit
+phonenumbers
 pip install pdfminer
