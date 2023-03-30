@@ -4,6 +4,7 @@ import re
 import base64
 import phonenumbers
 from PIL import Image
+from pdfminer.high_level import extract_text
 
 def extract_name(text):
     """
