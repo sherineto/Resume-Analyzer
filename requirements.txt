@@ -1,3 +1,4 @@
 streamlit
 phonenumbers
 pip install pdfminer
+-m pip install --upgrade pip
