@@ -1,5 +1,4 @@
 streamlit
-setuptools pypiwin32 six
 --no-cache-dir pdfminer
 pdfminer
 phonenumbers
