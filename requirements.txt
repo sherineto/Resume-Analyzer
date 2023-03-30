@@ -1,4 +1,3 @@
-streamlit
---no-cache-dir pdfminer
 pdfminer
+streamlit
 phonenumbers
