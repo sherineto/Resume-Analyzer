@@ -1,6 +1,5 @@
 streamlit
 pandas
-re
 base64
 phonenumbers
 pdfminer
