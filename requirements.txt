@@ -2,4 +2,3 @@ pdfminer
 streamlit
 phonenumbers
 docx
-exceptions
