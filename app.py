@@ -3,7 +3,6 @@ import pandas as pd
 import re
 import os
 import io
-import docx
 import base64
 import phonenumbers
 from PIL import Image
@@ -73,9 +72,6 @@ def extract_resume_info(file):
     # Extract text from temporary file
     if file.type == 'application/pdf':
         text = extract_text(f"tmp/{file.name}")
-    elif file.type in ('application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/msword'):
-        doc = docx.Document(io.BytesIO(file.read()))
-        text = '\n'.join([para.text for para in doc.paragraphs])
     else:
         text = ''
 
@@ -164,18 +160,13 @@ def main():
     with col2:
         st.write("Upload resumes in PDF format to extract name, email, phone number, and qualification.")
 
-        uploaded_files = st.file_uploader("Choose a file", type=['pdf', 'docx'], accept_multiple_files=True)
+        uploaded_files = st.file_uploader("Choose a file", type=['pdf'], accept_multiple_files=True)
 
     if uploaded_files:
         resume_list = []
         num_files = len(uploaded_files)
         with st.empty():
             for i, file in enumerate(uploaded_files):
-                _, file_ext = os.path.splitext(file.name)
-                if file_ext not in ['.pdf', '.docx']:
-                    st.write(f"Skipping file {file.name}. Invalid file extension.")
-                    continue
-
                 file_contents = file.getvalue()
                 info = extract_resume_info(file)
                 info["View Resume"] = create_resume_link(file_contents, file.name)
