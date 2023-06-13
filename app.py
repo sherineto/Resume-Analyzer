@@ -5,6 +5,8 @@ import os
 import io
 import base64
 import phonenumbers
+import pandas_bokeh
+pandas_bokeh.output_notebook()
 from PIL import Image
 from pdfminer.high_level import extract_text
 
@@ -205,7 +207,8 @@ def main():
         df_html = df.style.set_table_styles(table_style).render()
 
         # Display table with style
-        st.dataframe(df)
+        p_df = df.style.set_table_styles(table_style)
+        pandas_bokeh.render_dataframe(p_df, in_notebook=False)
 
         # Create download link for CSV
         csv = df.to_csv(index=False)
