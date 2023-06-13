@@ -1,4 +1,5 @@
 pdfminer
+pdfminer.six
 streamlit
 phonenumbers
 docx
