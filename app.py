@@ -205,7 +205,7 @@ def main():
         df_html = df.style.set_table_styles(table_style).render()
 
         # Display table with style
-        st.write(df_html, unsafe_allow_html=True)
+        st.dataframe(df)
 
         # Create download link for CSV
         csv = df.to_csv(index=False)
